@@ -1,0 +1,127 @@
+@import url(hero.css);
+@import url(about.css);
+@import url(testimonial.css);
+@import url(contact.css);
+@import url(artist.css);
+@import url(gallery.css);
+
+:root {
+  /* --- Colors --- */
+  --color-text: #1C1C1C;
+  --color-text-alt: #FAF7F2;
+  --color-border: rgba(28, 28, 28, 0.15); /* 1C1C1C with 15% transparency */
+  --color-bg: #FAF7F2;
+  --color-surface: #FFFFFF;
+  --color-primary: #020202;
+  --color-secondary: #503B31;
+
+  /* --- font family --- */
+  --ff-display: 'Poppins', sans-serif;
+  --ff-body: 'Inter', sans-serif;
+
+  /* --- Spacing (8px System) --- */
+
+  --space-8:   clamp(6px, 0.5vw + 4px, 8px);
+  --space-16:  clamp(12px, 1vw + 8px, 16px);
+  --space-24:  clamp(18px, 1.5vw + 12px, 24px);
+  --space-32:  clamp(24px, 2vw + 16px, 32px);
+  --space-40:  clamp(30px, 2.5vw + 20px, 40px);
+  --space-48:  clamp(36px, 3vw + 24px, 48px);
+  --space-64:  clamp(48px, 4vw + 32px, 64px);
+  --space-80:  clamp(60px, 5vw + 40px, 80px);
+  --space-96:  clamp(72px, 6vw + 48px, 96px);
+
+  /* --- Section Spacing --- */
+
+  --section-space-sm: clamp(80px, 10vw + 40px, 160px);  /* Scales to 160px */
+  --section-space-md: clamp(120px, 15vw + 60px, 200px); /* Scales to 200px */
+  --section-space-lg: clamp(160px, 20vw + 80px, 256px); /* Scales to 256px (32*8) */
+
+  /* --- Typography --- */
+
+  --fs-xs: clamp(0.875rem, 0.85rem + 0.1vw, 1rem);      /* 14px -> 16px */
+  --fs-16: 1rem;                                       /* 16px Base */
+  --fs-20: clamp(1.125rem, 1.05rem + 0.3vw, 1.25rem);  /* 18px -> 20px */
+  --fs-25: clamp(1.25rem, 1.15rem + 0.5vw, 1.56rem);   /* 20px -> 25px */
+  --fs-31: clamp(1.5rem, 1.35rem + 0.8vw, 1.94rem);    /* 24px -> 31px */
+  --fs-39: clamp(1.8rem, 1.5rem + 1.2vw, 2.44rem);    /* 29px -> 39px */
+  --fs-49: clamp(2.2rem, 1.8rem + 1.8vw, 3.06rem);    /* 35px -> 49px */
+  --fs-61: clamp(2.8rem, 2.2rem + 2.5vw, 3.81rem);    /* 45px -> 61px */
+  --fs-76: clamp(3.5rem, 2.8rem + 3.2vw, 4.75rem);    /* 56px -> 76px */
+  --fs-91: clamp(4.2rem, 3.5rem + 4.5vw, 5.69rem);    /* 67px -> 91px */
+
+  /* --- Border Radius --- */
+  --radius-sm: 8px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+
+  /* --- Shadows --- */
+  --shadow-light: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-medium: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-big: 0 12px 24px rgba(0, 0, 0, 0.12);
+
+  /* --- Layout Widths --- */
+  
+  /* 1. Full Screen */
+  --width-full: 100%;
+
+  /* 2. Contained */
+  --width-contained: calc(100% - 128px);
+  
+  /* 3. Standard Max-Width */ 
+  --max-site-width: 1440px; 
+
+  /* Responsive Margin (Mobile safety) */
+  --inline-margin: clamp(24px, 5vw, 64px);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--ff-body);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-size: var(--fs-16);
+  line-height: 1.5;
+  margin: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+a, button {
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* universal header */
+
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 3;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+}
+
+nav {
+    max-width: var(--width-contained);
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+ul {
+  display: flex;
+  gap: var(--space-16);
+}

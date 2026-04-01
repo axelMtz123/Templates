@@ -61,7 +61,7 @@
     padding: var(--space-16);
 }
 
-.h001-marquee .marquee-track {
+.h001-marquee-track {
     display: inline-flex;
     width: max-content;
     gap: var(--space-40);
@@ -88,6 +88,7 @@
     display: flex;
     flex-direction: column;
     align-items: start;
+    margin-top: var(--section-space-sm);
     gap: var(--space-24);
     width: 100%;
     max-width: var(--width-contained);
@@ -102,36 +103,181 @@
 /* -- h003 -- */
 
 #h003-hero {
+  margin-top: var(--section-space-sm);
   width: 100%;
   height: 100vh;
-  display: flex;
-  align-items: center;
   justify-content: center;
-  flex-direction: column
+  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
 }
 
-#h003-hero h1 {
-  font-family: var(--ff-display);
-  font-size: var(--fs-61);
-  margin-bottom: var(--space-40); 
+.h003-column-left {
+    padding:0  var(--space-40);
+    overflow: hidden;
+    height: 100%;
+}
+
+.h003-marquee {
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    position: relative;
+}
+
+.h003-marquee-track{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 20%;
+    border-right: 2px solid;
+    height: max-content;
+    gap: var(--space-16);
+}
+
+.h003-column-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.h003-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-24);
 }
 
 .h003-sec-text {
-  font-size: var(--fs-20);
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-16);
-  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-8);
+    width: 30%;
 }
 
-#h003-hero .carousel-container {
-  width: 100%;
-  perspective: 1000px; 
+
+#h003-hero h1 {
+  font-family: var(--ff-display);
+  font-size: var(--fs-91);
 }
 
-#h003-hero .carousel-track {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-32);
-  align-items: center;
+/* -- h004 -- */
+
+#h004-hero {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
+
+.h004-container {
+    max-width: var(--width-contained);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: var(--space-16);
+}
+
+.h004-main-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-16);
+    font-size: var(--fs-20);
+}
+
+.h004-main-text h1 {
+    font-size: var(--fs-61);
+}
+
+.h004-stat-card {
+    display: flex;
+    gap: var(--space-40);
+    text-align: center;
+    padding: var(--space-32);
+    background-color: var(--color-surface);
+    border-radius: 8px;
+    box-shadow: var(--shadow-medium);
+    color: var(--color-text);
+    font-size: var(--fs-20);
+    margin-top: var(--space-32);
+}
+
+/* -- h005 -- */
+
+#h005-hero {
+    width: 100%;
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    position: sticky;
+    top: 0;
+}
+
+.h005-hero-bg {
+    width: 100%;
+    height: 100%;
+    background-image: url(/images/hero-bg.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute; 
+    z-index: -1;
+    background-color: gray;
+}
+
+.h005-container {
+    max-width: var(--width-contained);
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-16);
+}
+
+.h005-container h1 {
+    font-size: var(--fs-91);
+}
+
+.h005-container p {
+    font-size: var(--fs-20);;
+}
+
+.h005-container button {
+    margin-left: var(--space-80);
+    margin-top: var(--space-16);
+}
+
+.h005-secondary {
+    height: 100%;
+    display: flex;
+    align-items: end;
+    justify-content: end;
+    padding-bottom: var(--space-24);
+}
+
+
+#h005-about {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    background-color: var(--color-bg);
+    z-index: 5;
+}
+

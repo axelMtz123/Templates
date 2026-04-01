@@ -39,16 +39,25 @@
 
   /* --- Typography --- */
 
-  --fs-xs: clamp(0.875rem, 0.85rem + 0.1vw, 1rem);      /* 14px -> 16px */
-  --fs-16: 1rem;                                       /* 16px Base */
-  --fs-20: clamp(1.125rem, 1.05rem + 0.3vw, 1.25rem);  /* 18px -> 20px */
-  --fs-25: clamp(1.25rem, 1.15rem + 0.5vw, 1.56rem);   /* 20px -> 25px */
-  --fs-31: clamp(1.5rem, 1.35rem + 0.8vw, 1.94rem);    /* 24px -> 31px */
-  --fs-39: clamp(1.8rem, 1.5rem + 1.2vw, 2.44rem);    /* 29px -> 39px */
-  --fs-49: clamp(2.2rem, 1.8rem + 1.8vw, 3.06rem);    /* 35px -> 49px */
-  --fs-61: clamp(2.8rem, 2.2rem + 2.5vw, 3.81rem);    /* 45px -> 61px */
-  --fs-76: clamp(3.5rem, 2.8rem + 3.2vw, 4.75rem);    /* 56px -> 76px */
-  --fs-91: clamp(4.2rem, 3.5rem + 4.5vw, 5.69rem);    /* 67px -> 91px */
+  --fs-xs: clamp(0.8rem, 0.78rem + 0.1vw, 0.95rem);
+
+  --fs-16: 1rem;
+
+  --fs-20: clamp(1rem, 0.98rem + 0.2vw, 1.25rem);
+
+  --fs-25: clamp(1.1rem, 1.05rem + 0.3vw, 1.56rem);
+
+  --fs-31: clamp(1.25rem, 1.15rem + 0.5vw, 1.94rem);
+
+  --fs-39: clamp(1.4rem, 1.25rem + 0.8vw, 2.44rem);
+
+  --fs-49: clamp(1.6rem, 1.4rem + 1.2vw, 3.06rem);
+
+  --fs-61: clamp(1.9rem, 1.6rem + 1.6vw, 3.81rem);
+
+  --fs-76: clamp(2.2rem, 1.8rem + 2.2vw, 4.75rem);
+
+  --fs-91: clamp(2.6rem, 2rem + 3vw, 5.69rem);
 
   /* --- Border Radius --- */
   --radius-sm: 8px;
@@ -72,7 +81,7 @@
   --max-site-width: 1440px; 
 
   /* Responsive Margin (Mobile safety) */
-  --inline-margin: clamp(24px, 5vw, 64px);
+  --inline-margin: calc(100% - 64px);
 }
 
 * {
@@ -110,10 +119,15 @@ header {
   height: 10vh;
   display: flex;
   justify-content: center;
+  z-index: 10;
+}
+
+header h1 {
+  font-size: var(--fs-31);
 }
 
 nav {
-    max-width: var(--width-contained);
+    max-width: var(--inline-margin);
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -124,4 +138,99 @@ nav {
 ul {
   display: flex;
   gap: var(--space-16);
+}
+.hamburger {
+  display: none;
+}
+
+
+
+
+@media (max-width: 600px) {
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-8);
+    cursor: pointer;
+    z-index: 11;
+    width: 2rem;
+    border: none;
+    background-color: transparent;
+    transition: all 0.4s;
+  }
+
+  .ham-line {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-text);
+    transition: all 0.4s;
+  }
+
+  .hamburger.active .line-1 {
+    transform: rotate(45deg) translate(0.3rem, 0.3rem);
+  }
+
+  .hamburger.active .line-2 {
+    opacity: 0;
+  }
+
+  .hamburger.active .line-3 {
+    transform: rotate(-45deg) translate(0.4rem, -0.5rem);
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-32);
+    background-color: var(--color-bg);
+    transition: all 0.4s;
+  }
+
+}
+
+/* -- Buttons variations -- */
+
+.btn-var1 {
+  padding: 1rem 2rem;
+  border: none;
+  background-color: var(--color-primary);
+  color: var(--color-text-alt);
+  font-size: var(--fs-25);
+  cursor: pointer;
+}
+
+.btn-var2 {
+  border: none;
+  background-color: transparent;
+  color: var(--color-text);
+  cursor: pointer;
+  width: 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  transition: all 0.4s ease-in-out;
+  perspective: 900px;
+  padding: 1rem;
+}
+
+.btn-var2 span {
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-text);
+}
+
+.btn-var2 span:nth-child(2) {
+  transform: rotate(90deg) translateX(-10px) ;
+}
+
+.btn-var2:hover {
+  transform: rotate(180deg) translateY(10px);
 }

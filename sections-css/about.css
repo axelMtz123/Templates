@@ -187,6 +187,13 @@
     font-size: var(--fs-61);
 }
 
+.ab003-title h2 {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .ab003-content {
     display: flex;
     flex-direction: column;
@@ -270,6 +277,7 @@
 .ab004-secondary p {
     width: 40%;
     text-align: end;
+    opacity: .75;
 }
 
 @media (max-width: 768px) {
@@ -346,6 +354,10 @@
     width: 100%;
     font-family: var(--ff-display);
     letter-spacing: .5rem;
+}
+
+#ab005-about p {
+    opacity: .75;
 }
 
 

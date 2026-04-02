@@ -109,6 +109,10 @@ a, button {
   color: inherit;
 }
 
+.cell-wide {
+  grid-column: 1 / -1;
+}
+
 /* universal header */
 
 header {

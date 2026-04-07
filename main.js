@@ -86,6 +86,17 @@ gsap.to(ab004Track, {
     repeat: -1
 });
 
+/* -- t001 -- */
+
+const t001Track = document.querySelector(".t001-marquee-track");
+
+gsap.to(t001Track, {
+    x: -width,
+    duration: 30,
+    ease: "none",
+    repeat: -1
+});
+
 /* -- all sections with scroll hor class -- */
 
 function initHorizontalScroll(containerClass, trackClass) {
